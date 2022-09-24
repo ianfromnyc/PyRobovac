@@ -326,6 +326,7 @@ class Robovac:
         except Exception as e:
             logging.exception(e)
             self.disconnect()
+            self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.connect()
             self.s.send(encrypted_packet_data )
 
